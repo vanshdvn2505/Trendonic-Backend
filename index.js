@@ -24,7 +24,7 @@ connectToDatabase();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://trendonic.netlify.app/',
     methods: ['GET', 'POST', 'OPTIONS', 'PUT'],
     allowedHeaders: ['Content-Type'],
     credentials: true
