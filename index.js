@@ -21,22 +21,10 @@ const connectToDatabase = async () => {
 }
 connectToDatabase();
 
-const allowedOrigins = [
-  'https://main--trendonic.netlify.app',
-  'https://trendonic.netlify.app'
-];
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: function (origin, callback) {
-                    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-                          callback(null, true);
-                    }
-                    else {
-                          callback(new Error('Not allowed by CORS'));
-                    }
-            },
+    origin: 'https://trendonic-frontend.onrender.com',
     methods: ['GET', 'POST', 'OPTIONS', 'PUT'],
     allowedHeaders: ['Content-Type'],
     credentials: true
