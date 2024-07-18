@@ -38,7 +38,9 @@ async function generateToken(res, user){
         );
         res.cookie("token", token, {
             httpOnly: true,
-            secure: true
+            secure: true,
+            sameSite: 'None',
+            maxAge: 24 * 60 * 60 * 1000
         });
         return token
     }
