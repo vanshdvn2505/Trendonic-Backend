@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
 dotenv.config();
 const app = express();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 7000
 const URL = process.env.URL
 import Product from './models/product.models.js';
 
